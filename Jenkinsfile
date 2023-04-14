@@ -9,9 +9,20 @@ python3 -m pip freeze'''
     }
 
     stage('think test') {
-      steps {
-        sh '''ls -la
+      parallel {
+        stage('think test') {
+          steps {
+            sh '''ls -la
 python3 -V'''
+          }
+        }
+
+        stage('BRANCHING') {
+          steps {
+            echo 'deleting messages'
+          }
+        }
+
       }
     }
 
