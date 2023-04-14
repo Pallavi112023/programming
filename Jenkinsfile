@@ -22,5 +22,12 @@ python3 -V'''
       }
     }
 
+    stage('test file') {
+      steps {
+        sh '''ls -la
+python3 -V'''
+      }
+    }
+
   }
 }
