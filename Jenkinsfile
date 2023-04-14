@@ -8,5 +8,12 @@ python3 -m pip freeze'''
       }
     }
 
+    stage('think test') {
+      steps {
+        sh '''ls -la
+python3 -V'''
+      }
+    }
+
   }
 }
