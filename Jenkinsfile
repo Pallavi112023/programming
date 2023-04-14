@@ -27,9 +27,20 @@ python3 -V'''
     }
 
     stage('step end') {
-      steps {
-        sh '''ls -la
+      parallel {
+        stage('step end') {
+          steps {
+            sh '''ls -la
 python3 -V'''
+          }
+        }
+
+        stage('test branch') {
+          steps {
+            echo 'special thing'
+          }
+        }
+
       }
     }
 
